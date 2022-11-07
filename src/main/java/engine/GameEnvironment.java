@@ -1,5 +1,7 @@
 package engine;
 
+import logic.Logic;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -8,6 +10,7 @@ public class GameEnvironment extends JPanel implements Runnable {
     Thread gameCycle;
     int resolution;
     long targetFrames;
+    Logic logic = new Logic();
 
     public GameEnvironment(int resolution, int targetFrames) {
         this.targetFrames = targetFrames;
@@ -57,6 +60,7 @@ public class GameEnvironment extends JPanel implements Runnable {
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
         // set all components x, y or call game engine
+        logic.update(g2);
 
         g2.dispose();
     }
