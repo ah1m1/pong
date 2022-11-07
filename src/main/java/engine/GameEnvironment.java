@@ -14,7 +14,7 @@ public class GameEnvironment extends JPanel implements Runnable {
 
     public GameEnvironment(int resolution, int targetFrames) {
         this.targetFrames = targetFrames;
-        this.logic = new Logic();
+        this.logic = new Logic(resolution);
 
         // set up display
         setSize(resolution, resolution);

@@ -3,8 +3,12 @@ package logic;
 public class Player {
     private int positionX;
     private int positionY;
+    private int height;
+    private int width;
 
     public Player(int positionX, int positionY) {
+        this.height = 100;
+        this.width = 10;
         this.positionX = positionX;
         this.positionY = positionY;
     }
