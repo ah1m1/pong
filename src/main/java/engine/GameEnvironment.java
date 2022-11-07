@@ -1,19 +1,20 @@
 package engine;
 
-import logic.Logic;
 
+import logic.Logic;
 import javax.swing.*;
 import java.awt.*;
 
 public class GameEnvironment extends JPanel implements Runnable {
 
     Thread gameCycle;
-    int resolution;
     long targetFrames;
-    Logic logic = new Logic();
+
+    Logic logic;
 
     public GameEnvironment(int resolution, int targetFrames) {
         this.targetFrames = targetFrames;
+        this.logic = new Logic();
 
         // set up display
         setSize(resolution, resolution);

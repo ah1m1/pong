@@ -1,7 +1,8 @@
 import engine.Embedding;
+import utils.Config;
 
 public class Main {
     public static void main(String[] args) {
-        Embedding.create(720);
+        Embedding.create(Config.RESOLUTION);
     }
 }
