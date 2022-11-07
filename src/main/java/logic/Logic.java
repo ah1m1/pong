@@ -15,10 +15,10 @@ public class Logic {
     private int movement;
     private boolean up = false;
 
-    public Logic(int resolution) {
-        this.height = resolution;
-        this.width = (int) (resolution * Config.ASPECT_RATIO);
-        this.ball = new Ball(width/2, height/2, 5);
+    public Logic(int width, int height) {
+        this.height = height;
+        this.width = width;
+        this.ball = new Ball(width/2, height/2, 1);
         this.movement = 0;
     }
 

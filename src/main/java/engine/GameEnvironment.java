@@ -2,8 +2,11 @@ package engine;
 
 
 import logic.Logic;
+import utils.Config;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
 public class GameEnvironment extends JPanel implements Runnable {
 
@@ -12,12 +15,12 @@ public class GameEnvironment extends JPanel implements Runnable {
 
     Logic logic;
 
-    public GameEnvironment(int resolution, int targetFrames) {
+    public GameEnvironment(int width, int height, int targetFrames) {
         this.targetFrames = targetFrames;
-        this.logic = new Logic(resolution);
+        this.logic = new Logic(width, height);
 
         // set up display
-        setSize(resolution, resolution);
+        setSize(width, height);
         setBackground(Color.BLACK);
 
         // set up game cycle thread
