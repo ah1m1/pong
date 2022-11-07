@@ -1,7 +1,6 @@
 package engine;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class Embedding {
     public static void create(int size) {
