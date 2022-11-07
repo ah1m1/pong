@@ -11,7 +11,7 @@ public class Embedding {
         frame.setResizable(false);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        GameEnvironment gameEnvironment = new GameEnvironment(size);
+        GameEnvironment gameEnvironment = new GameEnvironment(size, 60);
         frame.add(gameEnvironment);
         frame.setVisible(true);
     }

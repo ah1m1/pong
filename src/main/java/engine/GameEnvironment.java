@@ -9,7 +9,9 @@ public class GameEnvironment extends JPanel implements Runnable {
     int resolution;
     long targetFrames;
 
-    public GameEnvironment(int resolution) {
+    public GameEnvironment(int resolution, int targetFrames) {
+        this.targetFrames = targetFrames;
+
         // set up display
         setSize(resolution, resolution);
         setBackground(Color.BLACK);
