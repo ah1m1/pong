@@ -18,7 +18,7 @@ public class Logic {
     public Logic(int width, int height) {
         this.height = height;
         this.width = width;
-        this.ball = new Ball(width/2, height/2, 2);
+        this.ball = new Ball(width/2, height/2, 1);
         this.movement = 0;
     }
 
@@ -37,11 +37,14 @@ public class Logic {
     }
 
     private Ball handleBallCollisions(Ball ball) {
-        if(ball.getPositionX() == 0 || ball.getPositionX() + ball.getSize() >= width - (ball.getSize())) {
+        if(ball.getPositionX() <= 0 || ball.getPositionX() + ball.getSize() >= width - (ball.getSize())) {
             ball.setFlightDirection(ball.getFlightDirection()[0] * (-1), 0);
+
+            ball.setVelocity(ball.getVelocity() + 1);
         }
-        if(ball.getPositionY() == 0 || ball.getPositionY() + ball.getSize() >= height - (ball.getSize() * 3 + Config.ASPECT_RATIO)) {
+        if(ball.getPositionY() <= 0 || ball.getPositionY() + ball.getSize() >= height - (ball.getSize() * 3 + Config.ASPECT_RATIO)) {
             ball.setFlightDirection(ball.getFlightDirection()[1] * (-1), 1);
+            ball.setVelocity(ball.getVelocity() + 1);
         }
         return ball;
     }
