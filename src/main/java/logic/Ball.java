@@ -12,7 +12,7 @@ public class Ball {
     //y += flightDirection[1]
 
     public Ball(int positionX, int positionY, int velocity) {
-        this.size = 12;
+        this.size = 1;
         this.positionX = positionX;
         this.positionY = positionY;
         this.velocity = velocity;
@@ -53,5 +53,9 @@ public class Ball {
 
     public int getSize() {
         return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
     }
 }
