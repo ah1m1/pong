@@ -8,7 +8,6 @@ import java.awt.*;
 public class Embedding {
     public static void create(int size) {
         JFrame frame = new JFrame();
-        System.out.println(Frame.MAXIMIZED_BOTH);
         frame.setTitle("Ping by ah1m1/pong | angelsflyinhell.dev");
         frame.setResizable(false);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
