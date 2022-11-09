@@ -19,6 +19,11 @@ public class Logic {
         this.height = height - 36;
         this.width = width - 11;
         this.ball = new Ball(width/2, height/2, 1);
+        this.player1 = new Player(0, 0);
+        this.player2 = new Player(0, 0);
+        this.player1.setPosition(50, 20);
+        this.player2.setPosition(width - 50, 20);
+
         this.movement = 0;
     }
 
@@ -34,6 +39,8 @@ public class Logic {
         ball = handleBallCollisions(ball);
 
         g2.fillRect(ball.getPositionX(), ball.getPositionY(), ball.getSize(), ball.getSize());
+        g2.fillRect(player1.getPositionX(), player1.getPositionY(), player1.getWidth(), player1.getHeight());
+        g2.fillRect(player2.getPositionX(), player2.getPositionY(), player2.getWidth(), player2.getHeight());
     }
 
     private Ball handleBallCollisions(Ball ball) {
