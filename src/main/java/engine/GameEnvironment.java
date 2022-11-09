@@ -20,7 +20,7 @@ public class GameEnvironment extends JPanel implements Runnable {
         this.logic = new Logic(width, height);
 
         // set up display
-        setSize(width, height);
+        setPreferredSize(new Dimension(width, height));
         setBackground(Color.BLACK);
 
         // set up game cycle thread
