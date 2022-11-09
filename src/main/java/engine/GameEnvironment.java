@@ -2,6 +2,7 @@ package engine;
 
 
 import logic.Logic;
+import logic.Scoreboard;
 import utils.Config;
 
 import javax.swing.*;
@@ -14,6 +15,7 @@ public class GameEnvironment extends JPanel implements Runnable {
     long targetFrames;
 
     Logic logic;
+    Scoreboard sc;
 
     public GameEnvironment(int width, int height, int targetFrames) {
         this.targetFrames = targetFrames;
@@ -25,6 +27,9 @@ public class GameEnvironment extends JPanel implements Runnable {
 
         // set up game cycle thread
         gameCycle = new Thread(this);
+
+        // set up scoreboard
+        sc = new Scoreboard(width, height, 0, 100);
 
         setVisible(true);
         gameCycle.start();
@@ -62,6 +67,11 @@ public class GameEnvironment extends JPanel implements Runnable {
 
         Graphics2D g2 = (Graphics2D) g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+        sc.addPoint(1);
+        sc.addPoint(2);
+        sc.addPoint(2);
+        sc.drawScoreboard(g2);
 
         // set all components x, y or call game engine
         logic.update(g2);
