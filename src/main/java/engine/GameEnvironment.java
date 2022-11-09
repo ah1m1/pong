@@ -3,6 +3,7 @@ package engine;
 
 import logic.Logic;
 import utils.Config;
+import utils.Debug;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,7 +21,7 @@ public class GameEnvironment extends JPanel implements Runnable {
         this.logic = new Logic(width, height);
 
         // set up display
-        setSize(width, height);
+        setSize(new Dimension(width, height));
         setBackground(Color.BLACK);
 
         // set up game cycle thread
@@ -64,6 +65,7 @@ public class GameEnvironment extends JPanel implements Runnable {
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
         // set all components x, y or call game engine
+        Debug.debugCoords(g2, getWidth(), getHeight());
         logic.update(g2);
 
         g2.dispose();

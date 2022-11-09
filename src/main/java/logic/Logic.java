@@ -16,13 +16,13 @@ public class Logic {
     private boolean up = false;
 
     public Logic(int width, int height) {
-        this.height = height - 36;
-        this.width = width - 11;
+        this.height = height;
+        this.width = width;
         this.ball = new Ball(width/2, height/2, 1);
         this.player1 = new Player(0, 0);
         this.player2 = new Player(0, 0);
         this.player1.setPosition(50, 20);
-        this.player2.setPosition(width - 50, 20);
+        this.player2.setPosition(width - 50 - 25, 20);
 
         this.movement = 0;
     }
