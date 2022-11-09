@@ -2,6 +2,8 @@ package logic;
 
 import utils.Config;
 
+import java.util.Random;
+
 public class Ball {
     private int positionX;
     private int positionY;
@@ -65,6 +67,10 @@ public class Ball {
         this.positionX = (int) (Config.RESOLUTION * Config.ASPECT_RATIO) / 2;
         this.positionY = Config.RESOLUTION / 2;
         this.velocity = 2;
-
+        
+        for (int i = 0; i < flightDirection.length; i++) {
+            int n = new Random().nextInt( 2);
+            flightDirection[i] = (n == 0) ? -1 : n;
+        }
     }
 }
