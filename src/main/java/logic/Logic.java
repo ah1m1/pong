@@ -60,15 +60,7 @@ public class Logic {
             }
             ball.reset();
         }
-
-        if(ball.getPositionX() <= 0 || ball.getPositionX() >= width - ball.getSize()) {
-            ball.setFlightDirection(ball.getFlightDirection()[0] * (-1), 0);
-            higherVelocity += 1;
-            if (higherVelocity == 5) {
-                ball.setVelocity(ball.getVelocity() + 1);
-                higherVelocity = 0;
-            }
-        }
+        
         if(ball.getPositionY() <= 0 || ball.getPositionY() >= height - ball.getSize()) {
             ball.setFlightDirection(ball.getFlightDirection()[1] * (-1), 1);
             higherVelocity += 1;
