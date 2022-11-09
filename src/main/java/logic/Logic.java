@@ -62,6 +62,21 @@ public class Logic {
                 higherVelocity = 0;
             }
         }
+        if(ball.getPositionX() <= player1.getPositionX() + player1.getWidth()
+                && player1.getPositionY() <= ball.getPositionY()
+                && ball.getPositionY() <= player1.getPositionY() + player1.getHeight()
+                || player2.getPositionX() - player2.getWidth() <= ball.getPositionX()
+                && player1.getPositionY() <= ball.getPositionY()
+                && ball.getPositionY() <= player2.getPositionY() + player2.getHeight()) {
+            ball.setFlightDirection(ball.getFlightDirection()[0] * (-1), 0);
+            higherVelocity += 1;
+            if (higherVelocity == 5) {
+                ball.setVelocity(ball.getVelocity() + 1);
+                higherVelocity = 0;
+            }
+
+        }
+
     }
 
 
