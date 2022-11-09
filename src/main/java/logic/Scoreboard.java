@@ -29,4 +29,8 @@ public class Scoreboard {
     public void addPoint(int player) {
         points[player - 1]++;
     }
+
+    public int getPoint (int i) {
+        return points[i - 1];
+    }
 }

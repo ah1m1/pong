@@ -19,7 +19,11 @@ public class GameEnvironment extends JPanel implements Runnable {
 
     public GameEnvironment(int width, int height, int targetFrames) {
         this.targetFrames = targetFrames;
-        this.logic = new Logic(width, height);
+
+        // set up scoreboard
+        sc = new Scoreboard(width, height, 0, 100);
+
+        this.logic = new Logic(width, height, sc);
 
         // set up display
         setPreferredSize(new Dimension(width, height));
@@ -28,8 +32,7 @@ public class GameEnvironment extends JPanel implements Runnable {
         // set up game cycle thread
         gameCycle = new Thread(this);
 
-        // set up scoreboard
-        sc = new Scoreboard(width, height, 0, 100);
+
 
         setVisible(true);
         gameCycle.start();

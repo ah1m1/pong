@@ -1,5 +1,7 @@
 package logic;
 
+import utils.Config;
+
 public class Ball {
     private int positionX;
     private int positionY;
@@ -57,5 +59,12 @@ public class Ball {
 
     public void setSize(int size) {
         this.size = size;
+    }
+
+    public void reset() {
+        this.positionX = (int) (Config.RESOLUTION * Config.ASPECT_RATIO) / 2;
+        this.positionY = Config.RESOLUTION / 2;
+        this.velocity = 2;
+
     }
 }
