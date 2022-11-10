@@ -16,9 +16,11 @@ public class GameEnvironment extends JPanel implements Runnable {
 
     Logic logic;
     Scoreboard sc;
+    KeyListener keyListener;
 
-    public GameEnvironment(int width, int height, int targetFrames) {
+    public GameEnvironment(int width, int height, int targetFrames, KeyListener keyListener) {
         this.targetFrames = targetFrames;
+        this.keyListener = keyListener;
 
         // set up scoreboard
         sc = new Scoreboard(width, height, 0, 100);
@@ -71,6 +73,7 @@ public class GameEnvironment extends JPanel implements Runnable {
         Graphics2D g2 = (Graphics2D) g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
+        logic.handleControls(keyListener.isKeyUp(), keyListener.isKeyDown(), keyListener.isArrowUp(), keyListener.isArrowDown());
         sc.drawScoreboard(g2);
 
         // set all components x, y or call game engine

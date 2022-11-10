@@ -86,10 +86,21 @@ public class Logic {
 
     }
 
-
+    public void handleControls(boolean keyUp, boolean keyDown, boolean arrowUp, boolean arrowDown) {
+        int move = 4;
+        if(keyUp)
+            player1.setPositionY(player1.getPositionY() - move);
+        if(keyDown)
+            player1.setPositionY(player1.getPositionY() + move);
+        if(arrowUp)
+            player2.setPositionY(player2.getPositionY() - move);
+        if(arrowDown)
+            player2.setPositionY(player2.getPositionY() + move);
+    }
 
     private void drawField(Graphics2D g2, int width, int height) {
         g2.setColor(Color.GRAY);
         g2.drawLine(width / 2, 0, width / 2, height);
     }
+
 }
