@@ -19,7 +19,7 @@ public class Logic {
     public Logic(int width, int height, Scoreboard sb) {
         this.height = height;
         this.width = width;
-        this.ball = new Ball(width/2, height/2, 2);
+        this.ball = new Ball(width/2, height/2, 1);
         this.player1 = new Player(0, 0);
         this.player2 = new Player(0, 0);
         this.player1.setPosition(50, 20);
@@ -75,7 +75,6 @@ public class Logic {
                 ball.setVelocity(ball.getVelocity() + 1);
                 higherVelocity = 0;
             }
-
         }
 
         if(ball.getPositionY() <= 0 || ball.getPositionY() >= height - ball.getSize()) {
