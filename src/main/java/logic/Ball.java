@@ -17,8 +17,8 @@ public class Ball {
 
     public Ball(int positionX, int positionY, int velocity) {
         this.size = 26;
-        this.positionX = positionX;
-        this.positionY = positionY;
+        this.positionX = positionX - size / 2;
+        this.positionY = positionY - size / 2;
         this.velocity = velocity;
         this.flightDirection = new int[]{-1, 1};
     }
